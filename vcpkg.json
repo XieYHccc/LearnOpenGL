@@ -1,0 +1,19 @@
+{
+  "dependencies": [
+    "fmt",
+    "glfw3",
+    "glm",
+    "assimp"
+  ],
+  "features": {
+    "test": {
+      "description": "Dependencies for testing",
+      "dependencies": [
+        {
+          "name": "catch2",
+          "version>=": "3.7.0"
+        }
+      ]
+    }
+  }
+}
