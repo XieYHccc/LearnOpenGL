@@ -1,15 +1,15 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include <glad/glad.h> // holds all OpenGL type declarations
+#include <Framework/Shader.h>
 
+#include <glad/glad.h> // holds all OpenGL type declarations
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <Framework/shader.h>
-
 #include <string>
 #include <vector>
+
 using namespace std;
 
 #define MAX_BONE_INFLUENCE 4
@@ -80,7 +80,7 @@ public:
                 number = std::to_string(heightNr++); // transfer unsigned int to string
 
             // now set the sampler to the correct texture unit
-            glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), i);
+            glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), GLint(i));
             // and finally bind the texture
             glBindTexture(GL_TEXTURE_2D, textures[i].id);
         }

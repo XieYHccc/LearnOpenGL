@@ -1,8 +1,10 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include <glad/glad.h> 
+#include <Framework/Mesh.h>
+#include <Framework/Shader.h>
 
+#include <glad/glad.h> 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <stb_image.h>
@@ -10,15 +12,13 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include <Framework/mesh.h>
-#include <Framework/shader.h>
-
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <map>
 #include <vector>
+
 using namespace std;
 
 unsigned int TextureFromFile(const char *path, const string &directory, bool gamma = false);
