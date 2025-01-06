@@ -34,8 +34,6 @@ void GlfwWrapper::Init(const std::string& window_name, uint32_t window_width, ui
 		return;
 	}
 
-	glViewport(0, 0, window_width, window_height);
-
 	// callbacks
 	// ---------------------------------------
 	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {

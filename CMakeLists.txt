@@ -13,8 +13,10 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 
-# ---- framwork for all chapters ----
+configure_file(config/root_directory.h.in config/root_directory.h)
+include_directories(${CMAKE_BINARY_DIR}/config)
 
+# ---- framwork for all chapters ----
 add_subdirectory(Framework)
 
 # ---- chapters ----

@@ -43,6 +43,7 @@ int main()
 	// -----------------------------
 	glEnable(GL_DEPTH_TEST);
 
+    std::cout << "Current path is " << std::filesystem::current_path() << '\n';
 	// build and compile our shader zprogram
 	// ------------------------------------
 	Shader lightingShader("colors.vs", "colors.fs");
@@ -130,13 +131,11 @@ int main()
     // -----------------------------------------------------------------------------
     unsigned int diffuseMap = loadTexture(FileSystem::GetAssetPath("resources/textures/container2.png").c_str());
     unsigned int specularMap = loadTexture(FileSystem::GetAssetPath("resources/textures/container2_specular.png").c_str());
-    unsigned int emissionMap = loadTexture(FileSystem::GetAssetPath("resources/textures/matrix.jpg").c_str());
 
     // shader configuration
     lightingShader.use();
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
-    lightingShader.setInt("material.emission", 2);
 
     // render loop
     // -----------
@@ -174,8 +173,6 @@ int main()
         glBindTexture(GL_TEXTURE_2D, diffuseMap);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
-        glActiveTexture(GL_TEXTURE2);
-        glBindTexture(GL_TEXTURE_2D, emissionMap);
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)WINDOW_WIDTH/ (float)WINDOW_HEIGHT, 0.1f, 100.0f);
