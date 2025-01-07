@@ -33,7 +33,7 @@ glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
 int main()
 {
 	// setup glfw and glad
-	GlfwWrapper::Get().Init("02_02_BasicLighting", WINDOW_WIDTH, WINDOW_HEIGHT);
+	GlfwWrapper::Get().Init("02_02_LightingMaps", WINDOW_WIDTH, WINDOW_HEIGHT);
 	GLFWwindow* window = GlfwWrapper::Get().GetGLFWWindow();
 	glfwSetCursorPosCallback(window, mouse_callback);
 	glfwSetScrollCallback(window, scroll_callback);
