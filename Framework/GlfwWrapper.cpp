@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void GlfwWrapper::Init(const std::string& window_name, uint32_t window_width, uint32_t window_height)
+void GlfwWrapper::Init(const std::string& window_name, uint32_t window_width, uint32_t window_height, uint32_t msaa_count)
 {
 	// glfw: initialize and configure
 	// ------------------------------
@@ -10,6 +10,7 @@ void GlfwWrapper::Init(const std::string& window_name, uint32_t window_width, ui
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_SAMPLES, msaa_count);
 #ifdef __APPLE__
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
