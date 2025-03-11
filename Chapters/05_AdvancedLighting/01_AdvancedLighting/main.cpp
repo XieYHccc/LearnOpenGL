@@ -42,7 +42,7 @@ int main()
 
     // build shaders
     // -----------------------------
-    Shader shader("gamma.vs", "gamma.fs");
+    Shader shader("advance.vs", "advance.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
